@@ -1,6 +1,6 @@
 # Manikanta's Inline CSS Portfolio Website
 
-This is a **clean and modern single-page portfolio** created entirely with **HTML5 and inline CSS**—no external stylesheets or JavaScript involved. It showcases your web development and design capabilities using pure, semantic HTML elements and inline styling.
+This is a **clean and modern single-page portfolio** created entirely with **HTML5 and inline CSS**—no external stylesheets or JavaScript involved. It showcases your web development and design capabilities using pure, semantic HTML elements and inline styling. And I used a CDN(Content Delivery Network) for font awesome so I could add images to social accounts.
 
 ## Features
 
