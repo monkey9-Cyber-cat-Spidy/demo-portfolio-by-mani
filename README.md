@@ -37,7 +37,7 @@ This project serves as:
 
 ## Preview
 
-![Preview Screenshot](https://i.ibb.co/k6J9HGtC/file-000000005f6c62309d45b8f4886347e5-conversation-id-6818803c-dea8-8002-ba09-ff44bb51fdfe-message-i.png)
+![Preview Screenshot](https://i.ibb.co/s9gqNS1f/Screenshot-2025-05-05-180353.png)
 
 ## Contact
 
