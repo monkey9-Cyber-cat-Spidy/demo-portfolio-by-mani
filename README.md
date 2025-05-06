@@ -1,39 +1,40 @@
 # Manikanta's Inline CSS Portfolio Website
 
-This is a **clean and modern single-page portfolio** created entirely with **HTML5 and inline CSS**—no external stylesheets or JavaScript involved. It showcases your web development and design capabilities using pure, semantic HTML elements and inline styling. And I used a **CDN(Content Delivery Network)** for font awesome so I could add images to social accounts.
+A **modern, mobile-friendly single-page portfolio** built entirely using **HTML5 and inline CSS**. No external stylesheets or JavaScript — just pure semantic HTML with embedded styles. Font Awesome icons are loaded via CDN to enhance visual appeal.
 
 ## Features
 
-- **Single-page layout** optimized for readability and presentation
-- Inline CSS only — great for demonstrating CSS properties directly
-- Uses **Font Awesome** for social media icons
-- Responsive layout (mobile-friendly)
+- **Single-page layout** with clean, readable structure
+- **Responsive design** using inline styles (mobile-friendly)
+- **Font Awesome CDN** for social media icons
+- Inline-only CSS — demonstrates direct use of style attributes
 - Sections include:
-  - **Header**: Name and role
-  - **Image**: Profile photo
-  - **About Me**: Brief introduction
-  - **Skills**: Technical competencies
-  - **Contact**: LinkedIn, GitHub, Gmail
-  - **Footer**: Ownership and credit
+  - **Header** – Name and title
+  - **Profile Image**
+  - **About Me**
+  - **Skills & Experience**
+  - **Contact Information**
+  - **My Other web Pages**
+  - **Footer**
 
 ## Purpose
 
-This project serves as:
-- A **personal portfolio**
-- A **demonstration of inline CSS concepts**
-- A submission for **NexGenEduTech internship**
+This project was created as:
+- A **personal developer portfolio**
+- A demonstration of **inline CSS styling**
+- A submission for the **NexGenEduTech internship**
 
 ## Technologies Used
 
 - **HTML5**
 - **Inline CSS**
-- **Font Awesome (CDN)**
+- **Font Awesome (via CDN)**
 
 ## How to Use
 
 1. Download or clone this repository.
-2. Open the `index.html` file in your browser.
-3. You can customize your details or style directly in the HTML.
+2. Open the `index.html` file in any modern web browser.
+3. Edit the HTML file to customize content and styles.
 
 ## Preview
 
@@ -47,5 +48,5 @@ This project serves as:
 
 ---
 
-**Total Lines of Code:** `68`  
+**Total Lines of Code:** `92`  
 © 2025 Manikanta | Built with HTML & Inline CSS only
