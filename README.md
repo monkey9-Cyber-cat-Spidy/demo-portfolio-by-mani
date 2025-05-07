@@ -23,6 +23,7 @@ This project was created as:
 - A **personal developer portfolio**
 - A demonstration of **inline CSS styling**
 - A submission for the **NexGenEduTech internship**
+- To showcase all the Projects done by me for the **NexGenEduTech internship**
 
 ## Technologies Used
 
