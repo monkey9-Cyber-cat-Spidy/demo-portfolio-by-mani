@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foodie with Code Preview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    pre { background: #f0f0f0; padding: 10px; overflow-x: auto; }
+    code { white-space: pre-wrap; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Fix for anchor offset */
+    #home, #about, #menu, #testimonials, #contact {
+      scroll-margin-top: 100px; /* Matches sticky header height */
+    }
+
+    .monkey1 {
+      background: #f8f8f8;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .monkey2 { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
+    .monkey2 a { text-decoration: none; color: #333; font-weight: bold; }
+
+    .monkey3 {
+      background: url('https://i.ibb.co/Z1wNrPG6/images-7.jpg') center/cover no-repeat;
+      padding: 100px 20px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .monkey3::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .monkey3 div { position: relative; z-index: 1; }
+
+    .monkey4 {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .monkey4 img {
+      width: 180px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .monkey5 h2 { color: #d83a3a; margin: 0 0 10px; }
+    .monkey5 p { line-height: 1.5; margin: 10px 0; }
+
+    .monkey6 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .monkey7 {
+      width: 260px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      padding: 15px;
+    }
+    .monkey7 img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .monkey7 h3 {
+      margin: 10px 0 5px;
+      color: #d83a3a;
+    }
+
+    .monkey8 {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-style: italic;
+      border-left: 5px solid #d83a3a;
+      background: #f1f1f1;
+      padding: 15px;
+    }
+
+    .monkey9 {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 40px 20px;
+    }
+    .monkey9 input,
+    .monkey9 textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .monkey9 button {
+      padding: 10px;
+      background: #d83a3a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .monkey9 button:hover {
+      background: #b73131;
+    }
+
+    .monkey10 {
+      text-align: center;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    .monkey10 a {
+      margin: 0 8px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .monkey10 i.fa-linkedin { color: #0077b5; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="monkey1">
+  <h1 style="color: #d83a3a;">Foodie</h1>
+  <div>
+    <ul class="monkey2">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div id="home" class="monkey3">
+  <div>
+    <h2 style="font-size: 2.5em;">Welcome to Foodie!</h2>
+    <p>Delicious food delivered fast & fresh to your doorstep.</p>
+    <p>Order now and taste the difference!</p>
+  </div>
+</div>
+
+<!-- About -->
+<!-- About -->
+<div id="about" class="monkey4">
+  <img src="https://i.ibb.co/TMx5LpSK/images-6.jpg" alt="About Us Image">
+  <div class="monkey5">
+    <h2>About Us</h2>
+    <p><strong>Originality Advocates</strong> empower thinkers to say <em>NO</em> to copy & paste.</p>
+    <p>We support creativity through resources and community.</p>
+  </div>
+</div>
+<p style="text-align:center;"><em>Don't copy your code from AI, PROS create their own mess.</em></p>
+
+<!-- Menu -->
+<div id="menu">
+  <h2 style="text-align: center; color: #d83a3a;">Our Menu</h2>
+  <div class="monkey6">
+    <div class="monkey7">
+      <img src="https://i.ibb.co/84bWfRDK/Veggie-Delight.jpg" alt="Veggie Delight">
+      <h3>Veggie Delight</h3>
+      <p>Fresh seasonal vegetables with herbs and olive oil.</p>
+    </div>
+    <div class="monkey7">
+      <img src="https://i.ibb.co/8g1cmCZs/Spicy-Paneer-Wrap.jpg" alt="Spicy Paneer Wrap">
+      <h3>Spicy Paneer Wrap</h3>
+      <p>Paneer tikka wrapped in warm flatbread.</p>
+    </div>
+    <div class="monkey7">
+      <img src="https://i.ibb.co/YFfT58cJ/Classic-Biryani.jpg" alt="Classic Biryani">
+      <h3>Classic Biryani</h3>
+      <p>Aromatic rice cooked with flavorful spices.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div id="testimonials">
+  <h2 style="text-align: center; color: #d83a3a;">What Our Customers Say</h2>
+  <div class="monkey8">“Absolutely delicious! The best food delivery experience I’ve had.” – Ravi</div>
+  <div class="monkey8">“Every bite was worth it. Fast delivery and great taste!” – Anjali</div>
+</div>
+
+<!-- Contact -->
+<div id="contact" style="display: flex; justify-content: center; padding: 40px 20px;">
+  <div class="monkey7" style="max-width: 500px;">
+    <h2>Contact Us</h2>
+    <p>If you'd like to get in touch, we're just a message away!</p>
+    <p>Email: <a href="mailto:monkeyworld109@gmail.com">monkeyworld109@gmail.com</a></p>
+    <p>Phone: why I should give my number here</p>
+    <p>Address: Don't eat food at monkey's foodie cause you won't survive after eating it.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="monkey10">
+<p>
+  All rights reserved to Monkey and Production Department. Production dept. Means his cat 
+  <a href="https://i.ibb.co/bjvVYVmD/Snapchat-1989216097.jpg" target="_blank" style="color: #d83a3a; text-decoration: none;">
+    Aloo <i class="fas fa-cat"></i>
+  </a>
+</p>
+  <div>
+    <a href="https://github.com/monkey9-Cyber-cat-Spidy" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+    <a href="https://in.linkedin.com/in/kvsmanikanta" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+  </div>
+</footer>
+
+</body>
+</html>
