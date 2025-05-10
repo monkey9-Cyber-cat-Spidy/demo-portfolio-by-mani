@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foodie The Food of Death</title>
+  <title>Foodie with Code Preview</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body { margin: 0; font-family: sans-serif; }
@@ -14,9 +14,8 @@
       scroll-behavior: smooth;
     }
 
-    /* Fix for anchor offset */
     #home, #about, #menu, #testimonials, #contact {
-      scroll-margin-top: 100px; /* Matches sticky header height */
+      scroll-margin-top: 100px;
     }
 
     .monkey1 {
@@ -46,6 +45,23 @@
       background: rgba(0,0,0,0.5);
     }
     .monkey3 div { position: relative; z-index: 1; }
+    .hero-buttons {
+      margin-top: 20px;
+    }
+    .hero-buttons a,
+    .hero-buttons span {
+      padding: 10px 20px;
+      margin: 5px;
+      background: #d83a3a;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hero-buttons a:hover,
+    .hero-buttons span:hover {
+      background: #b73131;
+    }
 
     .monkey4 {
       max-width: 900px;
@@ -62,6 +78,15 @@
     }
     .monkey5 h2 { color: #d83a3a; margin: 0 0 10px; }
     .monkey5 p { line-height: 1.5; margin: 10px 0; }
+    .monkey5 a {
+      background: #d83a3a;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
 
     .monkey6 {
       display: flex;
@@ -162,10 +187,13 @@
     <h2 style="font-size: 2.5em;">Welcome to Foodie!</h2>
     <p>Delicious food delivered fast & fresh to your doorstep.</p>
     <p>Order now and taste the difference!</p>
+    <div class="hero-buttons">
+      <a href="#menu">Order Now</a>
+      <a href="#contact">Contact Us</a>
+    </div>
   </div>
 </div>
 
-<!-- About -->
 <!-- About -->
 <div id="about" class="monkey4">
   <img src="https://i.ibb.co/TMx5LpSK/images-6.jpg" alt="About Us Image">
@@ -173,6 +201,7 @@
     <h2>About Us</h2>
     <p><strong>Originality Advocates</strong> empower thinkers to say <em>NO</em> to copy & paste.</p>
     <p>We support creativity through resources and community.</p>
+    <a href="https://github.com/monkey9-Cyber-cat-Spidy" target="_blank">Visit GitHub</a>
   </div>
 </div>
 <p style="text-align:center;"><em>Don't copy your code from AI, PROS create their own mess.</em></p>
@@ -217,14 +246,20 @@
   </div>
 </div>
 
+<!-- Go Back Button -->
+<div style="text-align: center; margin-bottom: 40px;">
+  <a href="https://demo-portfolio-by-mani.vercel.app/" style="display: inline-block; background: #333; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Go Back</a>
+</div>
+
 <!-- Footer -->
 <footer class="monkey10">
-<p>
-  All rights reserved to Monkey and Production Department. Production dept. Means his cat 
-  <a href="https://i.ibb.co/bjvVYVmD/Snapchat-1989216097.jpg" target="_blank" style="color: #d83a3a; text-decoration: none;">
-    Aloo <i class="fas fa-cat"></i>
-  </a>
-</p>
+  <p>
+    All rights reserved to Monkey and Production Department. Production dept. means his cat 
+    <a href="https://i.ibb.co/bjvVYVmD/Snapchat-1989216097.jpg" target="_blank" style="color: #d83a3a; text-decoration: none;">
+      Aloo <i class="fas fa-cat"></i>
+    </a><br>
+    <small>Click on Aloo to see my cat who helped me code by staying quiet.</small>
+  </p>
   <div>
     <a href="https://github.com/monkey9-Cyber-cat-Spidy" target="_blank"><i class="fab fa-github fa-lg"></i></a>
     <a href="https://in.linkedin.com/in/kvsmanikanta" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
