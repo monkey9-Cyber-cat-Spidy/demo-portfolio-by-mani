@@ -41,12 +41,6 @@ This project was created as:
 
 ![Preview Screenshot](https://i.ibb.co/s9gqNS1f/Screenshot-2025-05-05-180353.png)
 
-## Contact
-
-- **LinkedIn**: [linkedin.com/in/kvsmanikanta](https://www.linkedin.com/in/kvsmanikanta)
-- **GitHub**: [github.com/monkey9-Cyber-cat-Spidy](https://github.com/monkey9-Cyber-cat-Spidy)
-- **Email**: [mk1343093@gmail.com](mailto:mk1343093@gmail.com)
-
 ---
 
 
@@ -114,7 +108,11 @@ A “Go To Main Portfolio” button at the end of the page invites visitors to e
 - **ARIA & Semantic Tags:** For screen readers, focus management, and keyboard users.  
   
 ---  
-  
+  ## Contact
 
-**Total Lines of Code:** `92`  
+- **LinkedIn**: [linkedin.com/in/kvsmanikanta](https://www.linkedin.com/in/kvsmanikanta)
+- **GitHub**: [github.com/monkey9-Cyber-cat-Spidy](https://github.com/monkey9-Cyber-cat-Spidy)
+- **Email**: [mk1343093@gmail.com](mailto:mk1343093@gmail.com)
+
+**Total Lines of Code:** `1500+`  
 © 2025 Manikanta | Built with HTML & Inline CSS only
