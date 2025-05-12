@@ -49,5 +49,72 @@ This project was created as:
 
 ---
 
+
+# Terry A. Davis Tribute Website  
+  
+This is a tribute website dedicated to **Terry A. Davis**, the creator of **TempleOS** — a unique, single-handedly developed operating system with a divine mission. This site honors his work, beliefs, and technical achievements by offering an immersive, interactive, and respectful digital memorial.  
+  
+---  
+  
+## Table of Contents  
+- [Features](#features)    
+- [Technologies Used](#technologies-used)    
+- [Setup and Installation](#setup-and-installation)    
+- [Project Structure](#project-structure)    
+- [Customization](#customization)    
+- [Accessibility](#accessibility)    
+- [Performance Optimizations](#performance-optimizations)    
+- [Browser Compatibility](#browser-compatibility)    
+- [Contributing](#contributing)    
+- [Credits and Acknowledgments](#credits-and-acknowledgments)    
+- [License](#license)    
+  
+---  
+  
+## Features  
+  
+### 1. Responsive Design    
+The entire site is built with mobile-first responsiveness in mind, ensuring optimal viewing across phones, tablets, and desktops.  
+  
+### 2. Starfield Background    
+A dynamic, animated starfield using the HTML5 `<canvas>` element to provide a cosmic, nostalgic backdrop reminiscent of TempleOS aesthetics.  
+  
+### 3. Oracle of ASCII    
+An interactive section inspired by Terry’s divine communication system, featuring random, spiritually themed ASCII messages revealed on button click.  
+  
+### 4. Section-Based Navigation    
+Sticky navigation bar with smooth scrolling and anchor-based links to major sections like Biography, TempleOS, HolyC, and Legacy.  
+  
+### 5. Interactive Modals    
+Each section includes "Learn More" or "View Game" buttons that open fullscreen modal dialogs with extended information and visuals.  
+  
+### 6. Expandable Content Sections    
+Uses checkboxes and labels to create accessible, expandable sections that reveal deeper content about Terry’s life, mental health, and beliefs.  
+  
+### 7. Timeline Layout    
+A chronological visual representation of key milestones in Terry’s life — education, development phases, and TempleOS releases.  
+  
+### 8. Image Gallery    
+Horizontally scrollable gallery containing rare TempleOS screenshots, code editors, and moments from Terry's journey.  
+  
+### 9. HolyC Code Comparison    
+Tabbed interface comparing **HolyC** to standard **C**, including syntax highlights and examples of each.  
+  
+### 10. Final CTA Button    
+A “Go To Main Portfolio” button at the end of the page invites visitors to explore the developer's broader work.  
+  
+---  
+  
+## Technologies Used  
+  
+- **HTML5:** Semantic layout and structural elements for accessibility and SEO.  
+- **CSS3:** Uses CSS Grid, Flexbox, animations, transitions, and CSS variables for consistent color themes.  
+- **JavaScript (Vanilla):** Oracle interactions, modal handling, gallery logic, and canvas animation.  
+- **Canvas API:** Starfield animation simulates movement of stars in the background.  
+- **ARIA & Semantic Tags:** For screen readers, focus management, and keyboard users.  
+  
+---  
+  
+
 **Total Lines of Code:** `92`  
 © 2025 Manikanta | Built with HTML & Inline CSS only
