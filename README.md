@@ -41,6 +41,8 @@ This project was created as:
 
 ![Preview Screenshot](https://i.ibb.co/s9gqNS1f/Screenshot-2025-05-05-180353.png)
 
+**Total Lines of Code:** `100+`  
+
 ---
 
 
