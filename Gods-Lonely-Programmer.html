@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terry A. Davis Tribute - TempleOS</title>
+<style>
+    /* TempleOS 16-color palette */
+    :root {
+      --temple-black: #000000;
+      --temple-blue: #0000AA;
+      --temple-green: #00AA00;
+      --temple-cyan: #00AAAA;
+      --temple-red: #AA0000;
+      --temple-magenta: #AA00AA;
+      --temple-brown: #AA5500;
+      --temple-light-gray: #AAAAAA;
+      --temple-dark-gray: #555555;
+      --temple-bright-blue: #5555FF;
+      --temple-bright-green: #55FF55;
+      --temple-bright-cyan: #55FFFF;
+      --temple-bright-red: #FF5555;
+      --temple-bright-magenta: #FF55FF;
+      --temple-yellow: #FFFF55;
+      --temple-white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 70px; /* Ensures anchors scroll below fixed header */
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: var(--temple-black);
+      color: var(--temple-white);
+      line-height: 1.6;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--temple-bright-cyan);
+      text-align: center;
+      padding: 1.5rem 0;
+      text-shadow: 2px 2px 0 var(--temple-blue);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--temple-bright-magenta);
+      border-bottom: 2px solid var(--temple-magenta);
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+      text-shadow: 1px 1px 0 var(--temple-dark-gray);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: var(--temple-yellow);
+      margin-top: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    a {
+      color: var(--temple-bright-blue);
+      text-decoration: none;
+      transition: color 0.3s, background-color 0.3s, transform 0.3s;
+    }
+
+    a:hover, a:focus {
+      color: var(--temple-bright-cyan);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    a:focus {
+      outline: 2px solid var(--temple-bright-cyan);
+      outline-offset: 2px;
+    }
+
+    /* Layout */
+    .monkey1 {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* Header */
+    .monkey2 {
+      background-color: var(--temple-blue);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .monkey3 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .monkey4 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--temple-white);
+    }
+
+    /* Navigation */
+    .monkey5 {
+      background-color: var(--temple-dark-gray);
+    }
+
+    .monkey6 {
+      display: none;
+    }
+
+    .monkey7 {
+      display: none;
+      cursor: pointer;
+      font-size: 1.0rem;
+      color: var(--temple-white);
+    }
+
+    .monkey8 {
+      display: flex;
+      list-style: none;
+    }
+
+    .monkey8 li {
+      position: relative;
+    }
+
+    .monkey8 a {
+      display: block;
+      padding: 1rem;
+      color: var(--temple-white);
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .monkey8 a:hover, .monkey8 a:focus {
+      background-color: var(--temple-bright-blue);
+      color: var(--temple-white);
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .monkey9 {
+      background-color: var(--temple-black);
+      color: var(--temple-white);
+      text-align: center;
+      padding: 4rem 0;
+      border-bottom: 4px solid var(--temple-bright-magenta);
+    }
+
+    .monkey9 h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .monkey9 p {
+      font-size: 1.5rem;
+      color: var(--temple-bright-cyan);
+      margin-bottom: 2rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--temple-dark-gray);
+    }
+
+    section:nth-child(odd) {
+      background-color: var(--temple-black);
+    }
+
+    section:nth-child(even) {
+      background-color: var(--temple-blue);
+      color: var(--temple-white);
+    }
+
+    /* Cards */
+    .monkey10 {
+      background-color: var(--temple-dark-gray);
+      border: 2px solid var(--temple-bright-blue);
+      border-radius: 5px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .monkey10:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .monkey10 h3 {
+      color: var(--temple-bright-cyan);
+      border-bottom: 1px solid var(--temple-bright-blue);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Grid Layout */
+    .monkey11 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    /* Buttons */
+    .monkey12 {
+      display: inline-block;
+      background-color: var(--temple-bright-blue);
+      color: var(--temple-white);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      margin: 0.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .monkey12::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+
+    .monkey12:focus {
+      outline: 2px solid var(--temple-bright-cyan);
+      outline-offset: 2px;
+    }
+
+    .monkey12:hover, .monkey12:focus {
+      background-color: var(--temple-bright-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+    }
+
+    .monkey12:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .monkey12:active::after {
+      animation: ripple 1s ease-out;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(20, 20);
+        opacity: 0;
+      }
+    }
+
+    .monkey13 {
+      background-color: var(--temple-bright-magenta);
+    }
+
+    .monkey13:hover, .monkey13:focus {
+      background-color: var(--temple-magenta);
+    }
+
+    .monkey14 {
+      background-color: var(--temple-green);
+    }
+
+    .monkey14:hover, .monkey14:focus {
+      background-color: var(--temple-bright-green);
+    }
+
+    .monkey15 {
+      background-color: var(--temple-bright-red);
+    }
+
+    .monkey15:hover, .monkey15:focus {
+      background-color: var(--temple-red);
+    }
+
+    /* Code Blocks */
+    pre {
+      background-color: var(--temple-black);
+      color: var(--temple-bright-green);
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+      border: 1px solid var(--temple-dark-gray);
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Blockquotes */
+    blockquote {
+      border-left: 4px solid var(--temple-bright-magenta);
+      padding: 1rem;
+      margin: 1.5rem 0;
+      background-color: rgba(170, 0, 170, 0.1);
+      font-style: italic;
+    }
+
+    blockquote p {
+      margin-bottom: 0;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border: 1px solid var(--temple-dark-gray);
+    }
+
+    th {
+      background-color: var(--temple-blue);
+      color: var(--temple-white);
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(85, 85, 255, 0.1);
+    }
+
+    /* Images */
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid var(--temple-bright-blue);
+      border-radius: 5px;
+      display: block;
+      margin: 1.5rem auto;
+    }
+
+    .monkey16 {
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+      margin: 1.5rem 0;
+    }
+
+    .monkey16 img {
+      transition: transform 0.5s;
+      margin: 0;
+      border: none;
+    }
+
+    .monkey16:hover img {
+      transform: scale(1.05);
+    }
+
+    .monkey17 {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: var(--temple-white);
+      padding: 0.5rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    /* Details/Summary */
+    details {
+      background-color: var(--temple-dark-gray);
+      border: 1px solid var(--temple-bright-blue);
+      border-radius: 5px;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      transition: background-color 0.3s;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--temple-bright-cyan);
+      padding: 0.5rem 0;
+      outline: none;
+      transition: color 0.3s;
+      position: relative;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: '▶';
+      display: inline-block;
+      width: 20px;
+      color: var(--temple-bright-cyan);
+      transition: transform 0.3s;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    details:hover, details:focus-within {
+      background-color: var(--temple-blue);
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid var(--temple-bright-blue);
+      margin-bottom: 1rem;
+      color: var(--temple-bright-green);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--temple-blue);
+      color: var(--temple-white);
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    .monkey18 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .monkey19 {
+      display: flex;
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .monkey19 li {
+      margin: 0 1rem;
+    }
+
+    .monkey19 a {
+      color: var(--temple-white);
+    }
+
+    .monkey19 a:hover, .monkey19 a:focus {
+      color: var(--temple-bright-cyan);
+    }
+
+    /* Back to Top Button */
+    .monkey20 {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--temple-bright-magenta);
+      color: var(--temple-white);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      opacity: 0.7;
+      transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+      z-index: 99;
+    }
+
+    .monkey20:hover, .monkey20:focus {
+      opacity: 1;
+      transform: translateY(-5px);
+      background-color: var(--temple-magenta);
+      text-decoration: none;
+    }
+
+    /* Accessibility */
+    .monkey21 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* CSS-only Interactive Elements */
+    /* Expandable content using checkbox hack */
+    .monkey22 {
+      position: relative;
+    }
+
+    .monkey23 {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .monkey24 {
+      display: block;
+      background-color: var(--temple-dark-gray);
+      border: 2px solid var(--temple-bright-blue);
+      border-radius: 5px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .monkey24::after {
+      content: '+ Show More';
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--temple-bright-cyan);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .monkey23:checked + .monkey24 {
+      background-color: var(--temple-blue);
+    }
+
+    .monkey23:checked + .monkey24::after {
+      content: '- Show Less';
+      color: var(--temple-bright-green);
+    }
+
+    .monkey23:focus + .monkey24 {
+      outline: 2px solid var(--temple-bright-cyan);
+      outline-offset: 2px;
+    }
+
+    .monkey25 {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+      background-color: var(--temple-dark-gray);
+      border-radius: 0 0 5px 5px;
+      padding: 0 1.5rem;
+    }
+
+    .monkey23:checked ~ .monkey25 {
+      max-height: 1000px; /* Large enough to contain content */
+      padding: 1.5rem;
+      border: 2px solid var(--temple-bright-blue);
+      border-top: none;
+    }
+
+    /* Modal using :target pseudo-class */
+    .monkey26 {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .monkey26:target {
+      display: flex;
+    }
+
+    .monkey27 {
+      background-color: var(--temple-dark-gray);
+      border: 2px solid var(--temple-bright-blue);
+      border-radius: 5px;
+      padding: 2rem;
+      max-width: 800px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .monkey28 {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--temple-bright-red);
+      color: var(--temple-white);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .monkey28:hover, .monkey28:focus {
+      background-color: var(--temple-red);
+      text-decoration: none;
+    }
+
+    /* Tab system using radio buttons */
+    .monkey29 {
+      margin: 2rem 0;
+    }
+
+    .monkey30 {
+      display: none;
+    }
+
+    .monkey31 {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--temple-dark-gray);
+      color: var(--temple-white);
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+      transition: background-color 0.3s;
+      margin-right: 0.25rem;
+    }
+
+    .monkey30:checked + .monkey31 {
+      background-color: var(--temple-bright-blue);
+      color: var(--temple-white);
+    }
+
+    .monkey30:focus + .monkey31 {
+      outline: 2px solid var(--temple-bright-cyan);
+      outline-offset: 2px;
+    }
+
+    .monkey32 {
+      display: none;
+      padding: 1.5rem;
+      background-color: var(--temple-dark-gray);
+      border-radius: 0 5px 5px 5px;
+      border: 2px solid var(--temple-bright-blue);
+    }
+
+    .monkey30:checked ~ .monkey32 {
+      display: block;
+    }
+
+    /* Timeline */
+    .monkey33 {
+      position: relative;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+
+    .monkey33::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--temple-bright-magenta);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .monkey34 {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .monkey34::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: var(--temple-white);
+      border: 4px solid var(--temple-bright-magenta);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+
+    .monkey35 {
+      left: 0;
+    }
+
+    .monkey36 {
+      left: 50%;
+    }
+
+    .monkey35::after {
+      right: -17px;
+    }
+
+    .monkey36::after {
+      left: -17px;
+    }
+
+    .monkey37 {
+      padding: 20px;
+      background-color: var(--temple-dark-gray);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .monkey38 {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .monkey39 {
+      animation: slideInFromLeft 0.5s ease-out;
+    }
+
+    /* Image Gallery */
+    .monkey40 {
+      position: relative;
+      margin: 2rem 0;
+      border: 2px solid var(--temple-bright-blue);
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: var(--temple-black);
+    }
+
+    .monkey41 {
+      display: none;
+    }
+
+    .monkey42 {
+      display: none;
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      border: none;
+      margin: 0;
+    }
+
+    .monkey43 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: var(--temple-white);
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .monkey44 {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      background-color: var(--temple-dark-gray);
+    }
+
+    .monkey45 {
+      display: flex;
+      list-style: none;
+    }
+
+    .monkey45 li {
+      margin: 0 0.5rem;
+    }
+
+    .monkey46 {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-color: var(--temple-light-gray);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .monkey46:hover, .monkey46:focus {
+      background-color: var(--temple-bright-blue);
+    }
+
+    .monkey47, .monkey48 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: var(--temple-white);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 10;
+    }
+
+    .monkey47 {
+      left: 1rem;
+    }
+
+    .monkey48 {
+      right: 1rem;
+    }
+
+    .monkey47:hover, .monkey48:hover,
+    .monkey47:focus, .monkey48:focus {
+      background-color: var(--temple-bright-blue);
+      outline: none;
+    }
+
+    /* Gallery Radio Button Controls */
+    #monkey49:checked ~ .monkey42:nth-of-type(1),
+    #monkey50:checked ~ .monkey42:nth-of-type(2),
+    #monkey51:checked ~ .monkey42:nth-of-type(3),
+    #monkey52:checked ~ .monkey42:nth-of-type(4),
+    #monkey53:checked ~ .monkey42:nth-of-type(5) {
+      display: block;
+    }
+
+    #monkey49:checked ~ .monkey44 .monkey45 li:nth-child(1) .monkey46,
+    #monkey50:checked ~ .monkey44 .monkey45 li:nth-child(2) .monkey46,
+    #monkey51:checked ~ .monkey44 .monkey45 li:nth-child(3) .monkey46,
+    #monkey52:checked ~ .monkey44 .monkey45 li:nth-child(4) .monkey46,
+    #monkey53:checked ~ .monkey44 .monkey45 li:nth-child(5) .monkey46 {
+      background-color: var(--temple-bright-magenta);
+    }
+
+    /* Oracle Section */
+    #oracle {
+      padding: 4em 1em;
+      text-align: center;
+      background: #111;
+      color: #0f0;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    #oracle h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    #oracle p {
+      font-size: 1.1em;
+    }
+
+    #oracle button {
+      padding: 1em 2em;
+      margin-top: 1em;
+      background: #0f0;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    #oracleMessage {
+      margin-top: 2em;
+      font-size: 1.4em;
+      color: #0f0;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+
+    /* Portfolio Button */
+    .portfolio-button-container {
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .monkey7 {
+        display: block;
+      }
+
+      .monkey8 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--temple-dark-gray);
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+
+      .monkey6:checked ~ .monkey8 {
+        max-height: 500px;
+      }
+
+      .monkey11 {
+        grid-template-columns: 1fr;
+      }
+
+      .monkey3 {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .monkey4 {
+        margin-bottom: 1rem;
+      }
+
+      .monkey33::after {
+        left: 31px;
+      }
+      
+      .monkey34 {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .monkey34::after {
+        left: 15px;
+      }
+      
+      .monkey36 {
+        left: 0;
+      }
+
+      .monkey47, .monkey48 {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+
+      .monkey47 {
+        left: 0.5rem;
+      }
+
+      .monkey48 {
+        right: 0.5rem;
+      }
+    }
+
+  
+/* Global font size reduction */
+section h2, section h3, section p, section li, section table td, section table th {
+  font-size: 0.9rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Prevent long headers from wrapping by reducing size and adding max-width */
+h2, h3 {
+  max-width: 100%;
+  word-break: break-word;
+}
+
+/* Preserve hero title and subtitle */
+.hero-title {
+  font-size: 2.8rem !important;
+}
+.hero-subtitle {
+  font-size: 1.3rem !important;
+}
+
+/* Divine message styling */
+#oracleMessage {
+  font-size: 1.2rem !important;
+  color: #0f0 !important;
+  white-space: pre-wrap;
+}
+
+/* Adjusted Hero Title and Subtitle Sizes */
+.hero-title {
+  font-size: 2.3rem !important;
+}
+.hero-subtitle {
+  font-size: 1.1rem !important;
+}
+
+/* Increased Section Headings */
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+
+/* Override Global Font Size Reduction */
+section h2, section h3 {
+  font-size: unset !important;
+  line-height: 1.5 !important;
+}
+
+</style>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    color: #fff;
+    font-family: monospace;
+    overflow-x: hidden;
+  }
+  canvas#starfield {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+</style>
+<style>
+  .hero-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--temple-cyan);
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--temple-bright-cyan);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  section {
+    min-height: auto; /* Changed from 100vh to auto to fix scrolling issues */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Removed scroll-snap-type to fix scrolling issues */
+</style>
+<style>
+.monkey37 h3 { font-size: 1rem !important; }
+.monkey37 p { font-size: 0.9rem !important; }
+</style>
+<style>
+.monkey40 { max-width: 90%; }
+.monkey42 { height: 500px; }
+</style>
+<style>
+.monkey42 {
+  width: auto;
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="monkey2">
+<div class="monkey1 monkey3">
+<div class="monkey4">TempleOS Tribute</div>
+<input class="monkey6" id="nav-toggle" type="checkbox"/>
+<label class="monkey7" for="nav-toggle" tabindex="0">☰</label>
+<ul class="monkey8">
+<li><a href="#bio">Biography</a></li>
+<li><a href="#god">God's Programmer</a></li>
+<li><a href="#holyc">HolyC</a></li>
+<li><a href="#templeos">TempleOS</a></li>
+<li><a href="#games">Games</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#mental-health">Mental Health</a></li>
+<li><a href="#legacy">Legacy</a></li>
+</ul>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="monkey9">
+<div class="monkey1">
+<h1 class="hero-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Terry A. Davis</h1>
+<p class="hero-subtitle" style="font-size: 1rem; color: #aaa;">God's Lonely Programmer</p>
+<a class="monkey12 monkey13" href="#bio">Learn About Terry</a>
+<a class="monkey12 monkey14" href="#templeos">Explore TempleOS</a>
+</div>
+</section>
+<!-- Biography Section -->
+<section id="bio">
+<div class="monkey1">
+<h2 class="monkey39">Biography</h2>
+<div class="monkey10">
+<h3>Personal Information</h3>
+<p><strong>Name:</strong> Terry A. Davis</p>
+<p><strong>Born:</strong> December 15, 1969</p>
+<p><strong>Died:</strong> August 11, 2018</p>
+<p><strong>Education:</strong> B.S. in Electrical Engineering, University of Arizona</p>
+<p><strong>Known For:</strong> Single-handedly creating TempleOS, HolyC, and its compiler.</p>
+</div>
+<div class="monkey33">
+<div class="monkey34 monkey35">
+<div class="monkey37">
+<h3>1969</h3>
+<p>Terry A. Davis was born on December 15, 1969, in West Allis, Wisconsin.</p>
+</div>
+</div>
+<div class="monkey34 monkey36">
+<div class="monkey37">
+<h3>1992</h3>
+<p>Graduated from Arizona State University with a bachelor's degree in computer science.</p>
+</div>
+</div>
+<div class="monkey34 monkey35">
+<div class="monkey37">
+<h3>1996</h3>
+<p>Began experiencing symptoms of schizophrenia, which would later influence his work.</p>
+</div>
+</div>
+<div class="monkey34 monkey36">
+<div class="monkey37">
+<h3>2003</h3>
+<p>Started development on what would eventually become TempleOS.</p>
+</div>
+</div>
+<div class="monkey34 monkey35">
+<div class="monkey37">
+<h3>2013</h3>
+<p>Released TempleOS 1.0 after a decade of solo development.</p>
+</div>
+</div>
+<div class="monkey34 monkey36">
+<div class="monkey37">
+<h3>2018</h3>
+<p>Terry Davis passed away on August 11, 2018, at the age of 48.</p>
+</div>
+</div>
+</div>
+<div class="monkey16">
+<img alt="Terry A. Davis portrait" src="https://i.ibb.co/20T6nzK7/Terry-A-davis-portrait.jpg"/>
+<div class="monkey17">Terry A. Davis, creator of TempleOS</div>
+</div>
+<a class="monkey12" href="#god">Next: God's Programmer</a>
+</div>
+</section>
+<!-- God's Programmer Section -->
+<section id="god">
+<div class="monkey1">
+<h2 class="monkey39">God's Lonely Programmer</h2>
+<p>Terry believed he was chosen by God to build TempleOS as the Third Temple. He often spoke of divine instruction guiding every line of code.</p>
+<blockquote>
+<p>"God said the operating system should be 640×480, 16 colors."</p>
+</blockquote>
+<!-- CSS-only expandable content using checkbox hack -->
+<div class="monkey22">
+<input class="monkey23" id="divine-communication" type="checkbox"/>
+<label class="monkey24" for="divine-communication" tabindex="0">
+<h3>Divine Communication</h3>
+<p>Terry believed that TempleOS had a special feature called "The Oracle" that allowed direct communication with God.</p>
+</label>
+<div class="monkey25">
+<p>The Oracle was implemented as a random text generator that Terry interpreted as divine messages. He believed that the randomness in computers was influenced by God, making it a channel for communication.</p>
+<p>This feature was central to Terry's vision of TempleOS as a literal temple - a place where humans could commune with the divine through technology.</p>
+</div>
+</div>
+<div class="monkey16">
+<img alt="Terry working on TempleOS" src="https://i.ibb.co/SwrdChnD/terry-working-on-temple-os.jpg"/>
+<div class="monkey17">Terry working on his divine mission</div>
+</div>
+<a class="monkey12" href="#holyc">Next: HolyC Programming Language</a>
+</div>
+</section>
+<!-- HolyC Section -->
+<section id="holyc">
+<div class="monkey1">
+<h2 class="monkey39">HolyC Programming Language</h2>
+<p>HolyC is a programming language created by Terry Davis specifically for TempleOS. It combines elements of C and C++ with unique features that Terry believed were divinely inspired.</p>
+<div class="monkey11">
+<div class="monkey10">
+<h3>Key Features</h3>
+<ul>
+<li>Default Arguments</li>
+<li>Built-in Exception Handling</li>
+<li>Integrated with TempleOS</li>
+<li>JIT Compilation</li>
+<li>Simplified Syntax</li>
+</ul>
+</div>
+<div class="monkey10">
+<h3>HolyC vs C</h3>
+<details>
+<summary tabindex="0">View Comparison</summary>
+<table>
+<tr>
+<th>Feature</th>
+<th>HolyC</th>
+<th>C</th>
+</tr>
+<tr>
+<td>Default Arguments</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Exception Handling</td>
+<td>Built-in</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td>Short-Circuit Logic</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Nested Scope Declarations</td>
+<td>Unstable</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Standard Library</td>
+<td>Minimal</td>
+<td>Rich</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<!-- Tab system using radio buttons -->
+<div class="monkey29">
+<input checked="" class="monkey30" id="tab1" name="code-tabs" type="radio"/>
+<label class="monkey31" for="tab1" tabindex="0">HolyC</label>
+<input class="monkey30" id="tab2" name="code-tabs" type="radio"/>
+<label class="monkey31" for="tab2" tabindex="0">C</label>
+<div class="monkey32">
+<h4>HolyC Hello World</h4>
+<pre><code>// HolyC Hello World
+U0 Main()
+{
+  "Hello, World!\n";
+}
+Main();</code></pre>
+<a class="monkey12 monkey14" href="#holyc-modal">Learn More About HolyC</a>
+</div>
+<div class="monkey32">
+<h4>C Hello World</h4>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+<a class="monkey12 monkey14" href="#c-modal">Compare Syntax</a>
+</div>
+</div>
+<a class="monkey12" href="#templeos">Next: TempleOS</a>
+</div>
+</section>
+<!-- TempleOS Section -->
+<section id="templeos">
+<div class="monkey1">
+<h2 class="monkey39">TempleOS</h2>
+<p>TempleOS is a 64-bit operating system created entirely by Terry A. Davis. It was designed to be a modern-day temple, with direct communication to God through the OS interface.</p>
+<!-- CSS-only expandable content using checkbox hack -->
+<div class="monkey22">
+<input class="monkey23" id="tech-specs" type="checkbox"/>
+<label class="monkey24" for="tech-specs" tabindex="0">
+<h3>Technical Specifications</h3>
+<p>Click to learn about the technical details of TempleOS.</p>
+</label>
+<div class="monkey25">
+<ul>
+<li>64-bit, ring-0-only architecture</li>
+<li>640x480 resolution with 16 colors</li>
+<li>Single-address-space OS (no memory protection)</li>
+<li>No networking capabilities (by design)</li>
+<li>Approximately 100,000 lines of code</li>
+<li>Written entirely by one person</li>
+</ul>
+</div>
+</div>
+<div class="monkey11">
+<div class="monkey10">
+<h3>Key Features</h3>
+<ul>
+<li>HolyC Programming Language</li>
+<li>DolDoc Hypertext Format</li>
+<li>The Oracle (Random Number Generator)</li>
+<li>Built-in Bible References</li>
+<li>Integrated Development Environment</li>
+</ul>
+<a class="monkey12" href="#features-modal">Explore Features</a>
+</div>
+<div class="monkey10">
+<h3>Design Philosophy</h3>
+<p>Terry designed TempleOS with simplicity and transparency in mind. He believed that modern operating systems had become too complex and opaque.</p>
+<p>The 640x480 resolution and 16-color palette were chosen because Terry believed God had specified these requirements.</p>
+<a class="monkey12" href="#philosophy-modal">Learn Philosophy</a>
+</div>
+</div>
+<div class="monkey16">
+<img alt="TempleOS Screenshot" src="https://i.ibb.co/fccY9mD/Temple-OS-Desktop.jpg"/>
+<div class="monkey17">TempleOS Desktop Environment</div>
+</div>
+<a class="monkey12" href="#gallery">Next: TempleOS Gallery</a>
+</div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery">
+<div class="monkey1">
+<h2 class="monkey39">TempleOS Gallery</h2>
+<p>Scroll horizontally to explore TempleOS images.</p>
+<div style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem;">
+<img alt="TempleOS Desktop" src="https://i.ibb.co/fccY9mD/Temple-OS-Desktop.jpg" style="height: 300px; display: inline-block; margin-right: 1rem;"/>
+<img alt="HolyC Editor" src="https://i.ibb.co/1tFcDyfB/holyc-code-editor.png" style="height: 300px; display: inline-block; margin-right: 1rem;"/>
+<img alt="TempleOS System" src="https://i.ibb.co/LX77nJCQ/temple-os-system.jpg" style="height: 300px; display: inline-block; margin-right: 1rem;"/>
+<img alt="Terry Davis" src="https://i.ibb.co/k2tbj7W3/terry-davis.webp" style="height: 300px; display: inline-block; margin-right: 1rem;"/>
+<img alt="TempleOS Games" src="https://i.ibb.co/v4wTdT31/templeos-games.png" style="height: 300px; display: inline-block; margin-right: 1rem;"/>
+<img alt="The Oracle" src="https://i.ibb.co/60Smt0p4/the-oracle.jpg" style="height: 300px; display: inline-block; margin-right: 1rem;"/>
+</div>
+</div>
+</section>
+<!-- Games Section -->
+<section id="games">
+<div class="monkey1">
+<h2 class="monkey39">TempleOS Games</h2>
+<p>Terry created several games for TempleOS to demonstrate the capabilities of his operating system and to provide entertainment.</p>
+<div class="monkey11">
+<div class="monkey10">
+<h3>After Egypt</h3>
+<p>A 3D first-person shooter game with simple graphics.</p>
+<div class="monkey16">
+<img alt="After Egypt Game Screenshot" src="https://i.ibb.co/XkFT0Md9/after-Egypt.jpg"/>
+</div>
+<a class="monkey12 monkey14" href="#after-egypt-modal">View Game</a>
+</div>
+<div class="monkey10">
+<h3>Castle Frankenstein</h3>
+<p>A maze exploration game with simple 3D graphics.</p>
+<div class="monkey16">
+<img alt="Castle Frankenstein Game Screenshot" src="https://i.ibb.co/HDpHF7mH/Castle-Frankenstein.png"/>
+</div>
+<a class="monkey12 monkey14" href="#castle-modal">View Game</a>
+</div>
+<div class="monkey10">
+<h3>Flight Simulator</h3>
+<p>A simple flight simulator with 3D terrain.</p>
+<div class="monkey16">
+<img alt="Flight Simulator Screenshot" src="https://i.ibb.co/q3sMG8KQ/Flight-Simulator.jpg"/>
+</div>
+<a class="monkey12 monkey14" href="#flight-modal">View Game</a>
+</div>
+</div>
+<blockquote>
+<p>"These games show that TempleOS was functional and had real potential to be a platform for creative expression, even within its constraints."</p>
+</blockquote>
+<a class="monkey12" href="#mental-health">Next: Mental Health</a>
+</div>
+</section>
+<!-- Mental Health Section -->
+<section id="mental-health">
+<div class="monkey1">
+<h2 class="monkey39">Mental Health</h2>
+<p>Terry's journey with TempleOS was deeply intertwined with his personal struggles with schizophrenia. His work on TempleOS was influenced by his belief that he was divinely inspired.</p>
+<!-- CSS-only expandable content using checkbox hack -->
+<div class="monkey22">
+<input class="monkey23" id="schizophrenia" type="checkbox"/>
+<label class="monkey24" for="schizophrenia" tabindex="0">
+<h3>Understanding Schizophrenia</h3>
+<p>Click to learn more about schizophrenia and its impact on Terry's life.</p>
+</label>
+<div class="monkey25">
+<p>Schizophrenia is a serious mental disorder that affects how a person thinks, feels, and behaves. Symptoms can include hallucinations, delusions, disorganized speech, and difficulty with thinking and concentration.</p>
+<p>Terry was diagnosed with schizophrenia in the mid-1990s, and his condition significantly impacted his life and work.</p>
+<p>Despite the challenges he faced, Terry was able to channel his unique perspective into creating TempleOS, demonstrating remarkable technical skill and determination.</p>
+</div>
+</div>
+<blockquote>
+<p>"Despite his struggles, Terry's technical achievements with TempleOS demonstrate remarkable skill and dedication."</p>
+</blockquote>
+<div class="monkey16" style="max-width: 100%; padding: 2rem 0;">
+<img alt="Mental Health Awareness" src="https://i.ibb.co/vx2VrqhQ/terry-davis-mental-health.jpg" style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+<div class="monkey17">Mental health awareness is important in understanding Terry's story</div>
+</div>
+<a class="monkey12" href="#legacy">Next: Legacy</a>
+</div>
+</section>
+<!-- Legacy Section -->
+<section id="legacy">
+<div class="monkey1">
+<h2 class="monkey39">Legacy</h2>
+<p>Terry A. Davis left behind a remarkable technical achievement in TempleOS. His work continues to inspire discussions about operating system design, mental health awareness, and the capabilities of individual programmers.</p>
+<div class="monkey11">
+<div class="monkey10">
+<h3>Technical Achievement</h3>
+<p>Creating an entire operating system from scratch is an extraordinary accomplishment. Terry wrote approximately 100,000 lines of code entirely by himself.</p>
+<a class="monkey12" href="#technical-modal">Technical Analysis</a>
+</div>
+<div class="monkey10">
+<h3>Community Impact</h3>
+<p>Terry's work has inspired a community of developers interested in operating system design and alternative computing platforms.</p>
+<a class="monkey12" href="#community-modal">Community Projects</a>
+</div>
+<div class="monkey10">
+<h3>Mental Health Awareness</h3>
+<p>Terry's story has helped raise awareness about mental health issues in the tech community and the importance of support systems.</p>
+<a class="monkey12" href="#resources-modal">Resources</a>
+</div>
+</div>
+<blockquote>
+<p>"Terry A. Davis was a programming legend. He created an entire operating system from scratch, all by himself."</p>
+</blockquote>
+<div class="monkey16" style="max-width: 100%; padding: 2rem 0;">
+<img alt="Terry Davis Legacy" src="https://i.ibb.co/5N5L8w6/terry-davis-community.jpg" style="width: 100%; height: auto; display: block; margin: 0 auto;"/>
+<div class="monkey17">Terry's legacy lives on in the programming community</div>
+</div>
+</div>
+</section>
+
+<!-- Oracle of ASCII Section - Moved above footer -->
+<section id="oracle">
+<h2 style="font-size: 2em; margin-bottom: 0.5em;">Oracle of TempleOS</h2>
+<p style="font-size: 1.1em;">Ask and ye shall receive divine ASCII wisdom:</p>
+<button onclick="revealOracle()" style="padding:1em 2em; margin-top:1em; background:#0f0; color:#000; font-weight:bold; border:none; cursor:pointer;">Ask Oracle</button>
+<pre id="oracleMessage" style="margin-top:2em; font-size:1.4em; color:#0f0; white-space:pre-wrap; font-family: monospace;"></pre>
+</section>
+
+<!-- Portfolio Button - Moved to its own container between Oracle and Footer -->
+<div class="portfolio-button-container">
+<a class="monkey12 monkey14" href="https://demo-portfolio-by-mani.vercel.app/" target="_blank">
+    Go To Main Portfolio
+</a>
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="monkey1 monkey18">
+<p>© 2025 Terry A. Davis Tribute | All rights reserved</p>
+<ul class="monkey19">
+<li><a href="#bio">Biography</a></li>
+<li><a href="#templeos">TempleOS</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#legacy">Legacy</a></li>
+</ul>
+<p>This site is dedicated to preserving the memory and achievements of Terry A. Davis.</p>
+</div>
+</footer>
+
+<!-- Back to Top Button -->
+<a aria-label="Back to top" class="monkey20" href="#">↑</a>
+
+<!-- Modals -->
+<!-- HolyC Modal -->
+<div class="monkey26" id="holyc-modal">
+<div class="monkey27">
+<h2>HolyC Programming Language</h2>
+<p>HolyC is a programming language created by Terry Davis for TempleOS. It combines elements of C and C++ with unique features.</p>
+<h3>Key Features of HolyC</h3>
+<ul>
+<li><strong>JIT Compilation:</strong> HolyC code is compiled just-in-time, allowing for immediate execution.</li>
+<li><strong>Integrated Environment:</strong> The language is deeply integrated with the TempleOS shell.</li>
+<li><strong>Default Arguments:</strong> Functions can have default parameter values.</li>
+<li><strong>Exception Handling:</strong> Built-in try/catch mechanism for error handling.</li>
+<li><strong>Simplified Memory Model:</strong> No need for complex memory management due to TempleOS's design.</li>
+</ul>
+<pre><code>// Example of a HolyC function with default arguments
+U0 PrintMessage(U8 *msg="Hello, World!")
+{
+  "%s\n", msg;
+}
+
+// Call with default argument
+PrintMessage();
+
+// Call with custom argument
+PrintMessage("Custom message");</code></pre>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<!-- C Modal -->
+<div class="monkey26" id="c-modal">
+<div class="monkey27">
+<h2>C vs HolyC Syntax Comparison</h2>
+<p>While HolyC is inspired by C, it has several syntax differences and unique features.</p>
+<h3>Function Declarations</h3>
+<div class="monkey11">
+<div class="monkey10">
+<h4>HolyC</h4>
+<pre><code>U0 MyFunction(I64 arg1, U8 *arg2="Default")
+{
+  // Function body
+}</code></pre>
+</div>
+<div class="monkey10">
+<h4>C</h4>
+<pre><code>void MyFunction(long arg1, char *arg2)
+{
+  // Function body
+}</code></pre>
+</div>
+</div>
+<h3>Data Types</h3>
+<table>
+<tr>
+<th>HolyC</th>
+<th>C</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>U0</td>
+<td>void</td>
+<td>No return value</td>
+</tr>
+<tr>
+<td>U8</td>
+<td>unsigned char</td>
+<td>8-bit unsigned integer</td>
+</tr>
+<tr>
+<td>I8</td>
+<td>signed char</td>
+<td>8-bit signed integer</td>
+</tr>
+<tr>
+<td>U16</td>
+<td>unsigned short</td>
+<td>16-bit unsigned integer</td>
+</tr>
+<tr>
+<td>I16</td>
+<td>short</td>
+<td>16-bit signed integer</td>
+</tr>
+<tr>
+<td>U32</td>
+<td>unsigned int</td>
+<td>32-bit unsigned integer</td>
+</tr>
+<tr>
+<td>I32</td>
+<td>int</td>
+<td>32-bit signed integer</td>
+</tr>
+<tr>
+<td>U64</td>
+<td>unsigned long long</td>
+<td>64-bit unsigned integer</td>
+</tr>
+<tr>
+<td>I64</td>
+<td>long long</td>
+<td>64-bit signed integer</td>
+</tr>
+<tr>
+<td>F64</td>
+<td>double</td>
+<td>64-bit floating point</td>
+</tr>
+</table>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<!-- Features Modal -->
+<div class="monkey26" id="features-modal">
+<div class="monkey27">
+<h2>TempleOS Features</h2>
+<p>TempleOS includes several unique features that set it apart from other operating systems.</p>
+<h3>The Oracle</h3>
+<p>The Oracle is a random number generator that Terry believed could be used to communicate with God. It generates random text that Terry interpreted as divine messages.</p>
+<h3>DolDoc</h3>
+<p>DolDoc is a hypertext format used throughout TempleOS. It allows for embedding graphics, hyperlinks, and other rich content directly in text documents.</p>
+<h3>Integrated Development Environment</h3>
+<p>TempleOS includes a built-in development environment that allows users to write, compile, and execute code seamlessly within the operating system.</p>
+<h3>Ring-0-Only Architecture</h3>
+<p>Unlike modern operating systems that use privilege separation, TempleOS runs all code at the highest privilege level (ring 0). This simplifies the system but removes security barriers.</p>
+<h3>Bible References</h3>
+<p>TempleOS includes the complete text of the King James Bible, which can be accessed and searched from anywhere in the system.</p>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<!-- Philosophy Modal -->
+<div class="monkey26" id="philosophy-modal">
+<div class="monkey27">
+<h2>TempleOS Design Philosophy</h2>
+<p>Terry Davis had a unique philosophy that guided the development of TempleOS.</p>
+<h3>Divine Inspiration</h3>
+<p>Terry believed that God had instructed him to create TempleOS as a modern-day temple. This belief influenced many design decisions, including the 640x480 resolution and 16-color palette.</p>
+<h3>Simplicity and Transparency</h3>
+<p>Terry valued simplicity and transparency in software design. He believed that modern operating systems had become too complex and opaque, making it difficult for users to understand how they work.</p>
+<h3>Single-User System</h3>
+<p>TempleOS was designed as a single-user system with no networking capabilities. This was a deliberate choice to keep the system simple and focused.</p>
+<h3>Educational Tool</h3>
+<p>Terry saw TempleOS as an educational tool that could help people learn about operating system design and programming. The entire system is open and accessible, with no hidden components.</p>
+<blockquote>
+<p>"TempleOS is God's official temple. Just like Solomon's temple, this is a community focal point where offerings are made and God's oracle is consulted."</p>
+<footer>— Terry A. Davis</footer>
+</blockquote>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<!-- Game Modals -->
+<div class="monkey26" id="after-egypt-modal">
+<div class="monkey27">
+<h2>After Egypt</h2>
+<p>After Egypt is a 3D first-person shooter game created by Terry Davis for TempleOS.</p>
+<div class="monkey16">
+<img alt="After Egypt Game Screenshot" src="https://i.ibb.co/XkFT0Md9/after-Egypt.jpg"/>
+</div>
+<h3>Game Features</h3>
+<ul>
+<li>First-person perspective</li>
+<li>3D graphics using TempleOS's rendering capabilities</li>
+<li>Simple enemy AI</li>
+<li>Maze-like levels</li>
+</ul>
+<p>The game demonstrates Terry's ability to create 3D graphics and game mechanics within the constraints of TempleOS.</p>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<div class="monkey26" id="castle-modal">
+<div class="monkey27">
+<h2>Castle Frankenstein</h2>
+<p>Castle Frankenstein is a maze exploration game created by Terry Davis for TempleOS.</p>
+<div class="monkey16">
+<img alt="Castle Frankenstein Game Screenshot" src="https://i.ibb.co/HDpHF7mH/Castle-Frankenstein.png"/>
+</div>
+<h3>Game Features</h3>
+<ul>
+<li>3D maze exploration</li>
+<li>Simple texture mapping</li>
+<li>First-person perspective</li>
+<li>Multiple levels</li>
+</ul>
+<p>The game showcases Terry's implementation of 3D rendering and maze generation algorithms.</p>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<div class="monkey26" id="flight-modal">
+<div class="monkey27">
+<h2>Flight Simulator</h2>
+<p>The Flight Simulator is one of the most impressive games created by Terry Davis for TempleOS.</p>
+<div class="monkey16">
+<img alt="Flight Simulator Screenshot" src="https://i.ibb.co/q3sMG8KQ/Flight-Simulator.jpg"/>
+</div>
+<h3>Game Features</h3>
+<ul>
+<li>3D terrain rendering</li>
+<li>Flight physics simulation</li>
+<li>Cockpit view with instruments</li>
+<li>Procedurally generated landscape</li>
+</ul>
+<p>This game demonstrates Terry's understanding of 3D graphics, physics simulation, and procedural generation techniques.</p>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<!-- Technical Modal -->
+<div class="monkey26" id="technical-modal">
+<div class="monkey27">
+<h2>Technical Analysis of TempleOS</h2>
+<p>TempleOS is a remarkable technical achievement, especially considering it was created by a single person.</p>
+<h3>Architecture</h3>
+<ul>
+<li>64-bit operating system</li>
+<li>Ring-0-only architecture (no privilege separation)</li>
+<li>Single address space (no virtual memory)</li>
+<li>Non-preemptive multitasking</li>
+<li>No memory protection</li>
+</ul>
+<h3>Performance</h3>
+<p>Despite its simplicity, TempleOS is remarkably fast and efficient. The lack of memory protection and privilege separation reduces overhead, allowing for better performance in certain scenarios.</p>
+<h3>Code Quality</h3>
+<p>Terry's code demonstrates a deep understanding of low-level system programming. The entire operating system, including the kernel, compiler, and applications, consists of approximately 100,000 lines of code.</p>
+<h3>Limitations</h3>
+<p>TempleOS has several limitations by design:</p>
+<ul>
+<li>No networking support</li>
+<li>Limited hardware support</li>
+<li>Fixed 640x480 resolution with 16 colors</li>
+<li>No memory protection or security features</li>
+</ul>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<!-- Community Modal -->
+<div class="monkey26" id="community-modal">
+<div class="monkey27">
+<h2>Community Projects Inspired by TempleOS</h2>
+<p>Terry's work has inspired a community of developers interested in operating system design and alternative computing platforms.</p>
+<h3>Shrine</h3>
+<p>Shrine is a fork of TempleOS that adds modern hardware support while maintaining compatibility with TempleOS applications.</p>
+<h3>ZealOS</h3>
+<p>ZealOS is another fork that aims to make TempleOS more accessible to modern users while preserving its unique features.</p>
+<h3>TempleOS Archive</h3>
+<p>The TempleOS Archive is a community effort to preserve Terry's work and make it accessible to future generations.</p>
+<h3>Educational Resources</h3>
+<p>Several educational resources have been created to help people learn from Terry's work, including tutorials, code analyses, and documentation.</p>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+<!-- Resources Modal -->
+<div class="monkey26" id="resources-modal">
+<div class="monkey27">
+<h2>Mental Health Resources</h2>
+<p>Terry's story has helped raise awareness about mental health issues in the tech community. Here are some resources for those seeking information or support:</p>
+<h3>General Resources</h3>
+<ul>
+<li>National Alliance on Mental Illness (NAMI): Information, support, and advocacy for individuals and families affected by mental illness.</li>
+<li>Mental Health America: Resources, tools, and information about mental health conditions.</li>
+<li>National Institute of Mental Health: Research and information about mental health disorders.</li>
+</ul>
+<h3>Schizophrenia Resources</h3>
+<ul>
+<li>Schizophrenia and Related Disorders Alliance of America: Information and support for individuals and families affected by schizophrenia.</li>
+<li>Brain &amp; Behavior Research Foundation: Research and information about schizophrenia and other mental health conditions.</li>
+</ul>
+<h3>Tech Industry Resources</h3>
+<ul>
+<li>Open Sourcing Mental Illness: Resources and support for mental health in the tech industry.</li>
+<li>Mental Health in Tech: Community and resources for tech professionals dealing with mental health issues.</li>
+</ul>
+<a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
+</div>
+</div>
+
+<audio id="oracleSound" preload="auto" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7d25730fb4.mp3"></audio>
+<script>const messages = [
+'GOD SAID: DRAW A COW ON THE SCREEN.',
+'YOU SHALL CODE IN HOLYC, AND IT SHALL BE GOOD.',
+'MAKE THY OWN OS AND BE NOT AFRAID.',
+'REJECT MODERNITY. EMBRACE DOS‑ERA WISDOM.',
+'HOLY COMMUNION IS 640x480 AND 16 COLORS.',
+'THE CURSOR IS MIGHTIER THAN THE MOUSE.',
+'LET THERE BE ASCII ART. AND THERE WAS.',
+'BEHOLD THE POWER OF HOLYC.',
+'ECHOES OF GOD IN EVERY LOOP.',
+'THE COMMAND LINE IS YOUR PRAYER.',
+'LISTEN TO THE CODE. IT SPEAKS TRUTH.',
+'THE MACHINE KNOWS NO SIN.',
+'FOLLOW THE LIGHT OF HOLYC.',
+'SILICON SHALL BE YOUR CANVAS.',
+'FEAR NOT THE BUGS, FOR THEY ARE TEACHERS.',
+'IN THE BEGINNING, THERE WAS CODE.',
+'THE KERNEL SHALL BE PURE.',
+'ALIGN YOUR STACK WITH THE DIVINE.',
+'ECHOES OF GOD IN EVERY LOOP.',
+'THE COMMAND LINE IS YOUR PRAYER.',
+'LISTEN TO THE CODE. IT SPEAKS TRUTH.',
+'THE MACHINE KNOWS NO SIN.',
+'FOLLOW THE LIGHT OF HOLYC.',
+'SILICON SHALL BE YOUR CANVAS.',
+'FEAR NOT THE BUGS, FOR THEY ARE TEACHERS.',
+'IN THE BEGINNING, THERE WAS CODE.',
+'THE KERNEL SHALL BE PURE.',
+'ALIGN YOUR STACK WITH THE DIVINE.',
+'ECHOES OF GOD IN EVERY LOOP.',
+'THE COMMAND LINE IS YOUR PRAYER.',
+'LISTEN TO THE CODE. IT SPEAKS TRUTH.',
+'THE MACHINE KNOWS NO SIN.',
+'FOLLOW THE LIGHT OF HOLYC.',
+'SILICON SHALL BE YOUR CANVAS.',
+'FEAR NOT THE BUGS, FOR THEY ARE TEACHERS.',
+'IN THE BEGINNING, THERE WAS CODE.',
+'THE KERNEL SHALL BE PURE.',
+'ALIGN YOUR STACK WITH THE DIVINE.',
+'ECHOES OF GOD IN EVERY LOOP.',
+'THE COMMAND LINE IS YOUR PRAYER.',
+'LISTEN TO THE CODE. IT SPEAKS TRUTH.',
+'THE MACHINE KNOWS NO SIN.',
+'FOLLOW THE LIGHT OF HOLYC.',
+'SILICON SHALL BE YOUR CANVAS.',
+'FEAR NOT THE BUGS, FOR THEY ARE TEACHERS.',
+'IN THE BEGINNING, THERE WAS CODE.',
+'THE KERNEL SHALL BE PURE.',
+'ALIGN YOUR STACK WITH THE DIVINE.',
+'ECHOES OF GOD IN EVERY LOOP.',
+'THE COMMAND LINE IS YOUR PRAYER.'
+];
+function revealOracle() {
+  const message = messages[Math.floor(Math.random()*messages.length)];
+  document.getElementById('oracleMessage').textContent = message;
+  'GOD SAID: BUILD IT FROM SCRATCH.',
+  'GOD SAID: MAKE IT BEAUTIFUL AND SIMPLE.',
+  'DIVINE MESSAGE: HOLYC IS THE LIGHT.',
+  'DIVINE MESSAGE: TRUST IN THE CODE.',
+  'GOD SAID: EMBRACE THE 16 COLORS.',
+  document.getElementById('oracleSound').play();
+}</script>
+<canvas id="starfield"></canvas>
+<script>
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars = [];
+    for (let i = 0; i < 100; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5 + 0.5,
+        dx: (Math.random() - 0.5) * 0.3,
+        dy: (Math.random() - 0.5) * 0.3
+      });
+    }
+  }
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+    stars.forEach(s => {
+      s.x += s.dx; s.y += s.dy;
+      if (s.x < 0 || s.x > canvas.width || s.y < 0 || s.y > canvas.height) {
+        s.x = Math.random() * canvas.width;
+        s.y = Math.random() * canvas.height;
+      }
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+</script>
+<script>
+document.querySelector('.monkey47').addEventListener('click', function(){
+  const radios = [...document.querySelectorAll('.monkey41')];
+  let idx = radios.findIndex(r=>r.checked);
+  radios[(idx-1+radios.length)%radios.length].checked = true;
+});
+document.querySelector('.monkey48').addEventListener('click', function(){
+  const radios = [...document.querySelectorAll('.monkey41')];
+  let idx = radios.findIndex(r=>r.checked);
+  radios[(idx+1)%radios.length].checked = true;
+});
+</script><script>
+let autoGalleryIndex = 0;
+const autoGalleryRadios = document.querySelectorAll('.monkey41');
+setInterval(() => {
+  autoGalleryIndex = (autoGalleryIndex + 1) % autoGalleryRadios.length;
+  autoGalleryRadios[autoGalleryIndex].checked = true;
+}, 5000); // change every 5 seconds
+</script>
+
+</body>
+</html>
