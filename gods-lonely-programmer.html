@@ -608,9 +608,7 @@
       padding: 1rem;
     }
 
-    .monkey26:target {
-      display: flex;
-    }
+    
 
     .monkey27 {
       background-color: var(--temple-dark-gray);
@@ -1294,7 +1292,7 @@ U0 Main()
   "Hello, World!\n";
 }
 Main();</code></pre>
-<a class="monkey12 monkey14" href="#holyc-modal">Learn More About HolyC</a>
+<button class="monkey12 monkey14" data-modal-target="holyc-modal">Learn More About HolyC</button>
 </div>
 <div class="monkey32">
 <h4>C Hello World</h4>
@@ -1304,7 +1302,7 @@ int main() {
     printf("Hello, World!\n");
     return 0;
 }</code></pre>
-<a class="monkey12 monkey14" href="#c-modal">Compare Syntax</a>
+<button class="monkey12 monkey14" data-modal-target="c-modal">Compare Syntax</button>
 </div>
 </div>
 <a class="monkey12" href="#templeos">Next: TempleOS</a>
@@ -1343,13 +1341,13 @@ int main() {
 <li>Built-in Bible References</li>
 <li>Integrated Development Environment</li>
 </ul>
-<a class="monkey12" href="#features-modal">Explore Features</a>
+<button class="monkey12" data-modal-target="features-modal">Explore Features</button>
 </div>
 <div class="monkey10">
 <h3>Design Philosophy</h3>
 <p>Terry designed TempleOS with simplicity and transparency in mind. He believed that modern operating systems had become too complex and opaque.</p>
 <p>The 640x480 resolution and 16-color palette were chosen because Terry believed God had specified these requirements.</p>
-<a class="monkey12" href="#philosophy-modal">Learn Philosophy</a>
+<button class="monkey12" data-modal-target="philosophy-modal">Learn Philosophy</button>
 </div>
 </div>
 <div class="monkey16">
@@ -1386,7 +1384,7 @@ int main() {
 <div class="monkey16">
 <img alt="After Egypt Game Screenshot" src="https://i.ibb.co/XkFT0Md9/after-Egypt.jpg"/>
 </div>
-<a class="monkey12 monkey14" href="#after-egypt-modal">View Game</a>
+<button class="monkey12 monkey14" data-modal-target="after-egypt-modal">View Game</button>
 </div>
 <div class="monkey10">
 <h3>Castle Frankenstein</h3>
@@ -1394,7 +1392,7 @@ int main() {
 <div class="monkey16">
 <img alt="Castle Frankenstein Game Screenshot" src="https://i.ibb.co/HDpHF7mH/Castle-Frankenstein.png"/>
 </div>
-<a class="monkey12 monkey14" href="#castle-modal">View Game</a>
+<button class="monkey12 monkey14" data-modal-target="castle-modal">View Game</button>
 </div>
 <div class="monkey10">
 <h3>Flight Simulator</h3>
@@ -1402,7 +1400,7 @@ int main() {
 <div class="monkey16">
 <img alt="Flight Simulator Screenshot" src="https://i.ibb.co/q3sMG8KQ/Flight-Simulator.jpg"/>
 </div>
-<a class="monkey12 monkey14" href="#flight-modal">View Game</a>
+<button class="monkey12 monkey14" data-modal-target="flight-modal">View Game</button>
 </div>
 </div>
 <blockquote>
@@ -1448,17 +1446,17 @@ int main() {
 <div class="monkey10">
 <h3>Technical Achievement</h3>
 <p>Creating an entire operating system from scratch is an extraordinary accomplishment. Terry wrote approximately 100,000 lines of code entirely by himself.</p>
-<a class="monkey12" href="#technical-modal">Technical Analysis</a>
+<button class="monkey12" data-modal-target="technical-modal">Technical Analysis</button>
 </div>
 <div class="monkey10">
 <h3>Community Impact</h3>
 <p>Terry's work has inspired a community of developers interested in operating system design and alternative computing platforms.</p>
-<a class="monkey12" href="#community-modal">Community Projects</a>
+<button class="monkey12" data-modal-target="community-modal">Community Projects</button>
 </div>
 <div class="monkey10">
 <h3>Mental Health Awareness</h3>
 <p>Terry's story has helped raise awareness about mental health issues in the tech community and the importance of support systems.</p>
-<a class="monkey12" href="#resources-modal">Resources</a>
+<button class="monkey12" data-modal-target="resources-modal">Resources</button>
 </div>
 </div>
 <blockquote>
@@ -1470,7 +1468,6 @@ int main() {
 </div>
 </div>
 </section>
-
 <!-- Oracle of ASCII Section - Moved above footer -->
 <section id="oracle">
 <h2 style="font-size: 2em; margin-bottom: 0.5em;">Oracle of TempleOS</h2>
@@ -1478,14 +1475,12 @@ int main() {
 <button onclick="revealOracle()" style="padding:1em 2em; margin-top:1em; background:#0f0; color:#000; font-weight:bold; border:none; cursor:pointer;">Ask Oracle</button>
 <pre id="oracleMessage" style="margin-top:2em; font-size:1.4em; color:#0f0; white-space:pre-wrap; font-family: monospace;"></pre>
 </section>
-
 <!-- Portfolio Button - Moved to its own container between Oracle and Footer -->
 <div class="portfolio-button-container">
 <a class="monkey12 monkey14" href="https://demo-portfolio-by-mani.vercel.app/" target="_blank">
     Go To Main Portfolio
 </a>
 </div>
-
 <!-- Footer -->
 <footer>
 <div class="monkey1 monkey18">
@@ -1499,10 +1494,8 @@ int main() {
 <p>This site is dedicated to preserving the memory and achievements of Terry A. Davis.</p>
 </div>
 </footer>
-
 <!-- Back to Top Button -->
 <a aria-label="Back to top" class="monkey20" href="#">↑</a>
-
 <!-- Modals -->
 <!-- HolyC Modal -->
 <div class="monkey26" id="holyc-modal">
@@ -1775,7 +1768,6 @@ PrintMessage("Custom message");</code></pre>
 <a aria-label="Close" class="monkey28" href="javascript:void(0);" onclick="this.closest('.monkey26').style.display='none';">×</a>
 </div>
 </div>
-
 <audio id="oracleSound" preload="auto" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7d25730fb4.mp3"></audio>
 <script>const messages = [
 'GOD SAID: DRAW A COW ON THE SCREEN.',
@@ -1896,6 +1888,18 @@ setInterval(() => {
   autoGalleryRadios[autoGalleryIndex].checked = true;
 }, 5000); // change every 5 seconds
 </script>
-
-</body>
+<script>
+document.querySelectorAll('[data-modal-target]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modalId = btn.getAttribute('data-modal-target');
+    const modal = document.getElementById(modalId);
+    if (modal) modal.style.display = 'flex';
+  });
+});
+document.querySelectorAll('.monkey28').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    closeBtn.closest('.monkey26').style.display = 'none';
+  });
+});
+</script></body>
 </html>
