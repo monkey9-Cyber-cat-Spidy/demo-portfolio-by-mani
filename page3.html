@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foodie - Layout 3</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    pre { background: #f0f0f0; padding: 10px; overflow-x: auto; }
+    code { white-space: pre-wrap; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #home, #about, #menu, #testimonials, #contact {
+      scroll-margin-top: 100px;
+    }
+
+    /* 12-column grid system */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      align-items: center;
+    }
+
+    .monkey1 {
+      background: #f8f8f8;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .monkey2 { list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; }
+    .monkey2 a { text-decoration: none; color: #333; font-weight: bold; }
+
+    /* Responsive navigation for small screens */
+    @media (max-width: 600px) {
+      .monkey2 {
+        gap: 8px;
+        font-size: 0.9em;
+      }
+    }
+
+    .monkey3 {
+      background: url('https://i.ibb.co/Z1wNrPG6/images-7.jpg') center/cover no-repeat;
+      padding: 100px 20px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .monkey3::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .monkey3 div { position: relative; z-index: 1; }
+    .hero-buttons {
+      margin-top: 20px;
+    }
+    .hero-buttons a,
+    .hero-buttons span {
+      padding: 10px 20px;
+      margin: 5px;
+      background: #d83a3a;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hero-buttons a:hover,
+    .hero-buttons span:hover {
+      background: #b73131;
+    }
+
+    /* About section - Layout 3: Image top, text bottom using grid areas */
+    .monkey4 {
+      margin: 40px auto;
+    }
+    
+    .about-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+      border-radius: 8px;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+    
+    .monkey5 h2 { color: #d83a3a; margin: 0 0 10px; }
+    .monkey5 p { line-height: 1.5; margin: 10px 0; }
+    .monkey5 a {
+      background: #d83a3a;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* Layout 3: Image top, text bottom */
+    .layout3 {
+      grid-template-areas: 
+        "img img img img img img img img img img img img"
+        "text text text text text text text text text text text text";
+    }
+    
+    .layout3 .about-image {
+      grid-area: img;
+      margin-bottom: 20px;
+    }
+    
+    .layout3 .monkey5 {
+      grid-area: text;
+      text-align: center;
+    }
+
+    /* Responsive design for Layout 3 */
+    @media (max-width: 992px) {
+      .layout3 .about-image img {
+        max-width: 250px;
+      }
+      
+      .layout3 .monkey5 {
+        font-size: 0.95em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .layout3 .about-image img {
+        max-width: 200px;
+      }
+      
+      .layout3 .monkey5 {
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .layout3 .about-image img {
+        max-width: 180px;
+      }
+      
+      .layout3 .monkey5 h2 {
+        font-size: 1.5em;
+      }
+    }
+
+    /* Menu section with enhanced cards */
+    .menu-heading {
+      text-align: center;
+      color: #d83a3a;
+      margin: 40px 0 20px;
+    }
+    
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+    
+    .menu-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .menu-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .menu-card-content {
+      padding: 15px;
+    }
+    
+    .menu-card-title {
+      color: #d83a3a;
+      margin: 0 0 10px;
+      font-size: 1.2em;
+    }
+    
+    .menu-card-description {
+      margin: 0 0 15px;
+      color: #555;
+    }
+    
+    .menu-card-price {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .order-button {
+      background: #d83a3a;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    
+    .order-button:hover {
+      background: #b73131;
+    }
+
+    .monkey8 {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-style: italic;
+      border-left: 5px solid #d83a3a;
+      background: #f1f1f1;
+      padding: 15px;
+    }
+
+    .monkey9 {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 40px 20px;
+    }
+    .monkey9 input,
+    .monkey9 textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .monkey9 button {
+      padding: 10px;
+      background: #d83a3a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .monkey9 button:hover {
+      background: #b73131;
+    }
+
+    .monkey10 {
+      text-align: center;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    .monkey10 a {
+      margin: 0 8px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .monkey10 i.fa-linkedin { color: #0077b5; }
+
+    /* Layout navigation */
+    .layout-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .layout-nav a {
+      padding: 8px 16px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .layout-nav a.active {
+      background: #d83a3a;
+    }
+    .layout-nav a:hover {
+      background: #555;
+    }
+    .layout-nav a.active:hover {
+      background: #b73131;
+    }
+
+    /* Responsive layout navigation */
+    @media (max-width: 576px) {
+      .layout-nav {
+        gap: 5px;
+      }
+      .layout-nav a {
+        padding: 6px 10px;
+        font-size: 0.9em;
+      }
+    }
+    
+    /* Order confirmation modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+    }
+    
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #777;
+    }
+    
+    .close-modal:hover {
+      color: #333;
+    }
+    
+    .modal-title {
+      color: #d83a3a;
+      margin-top: 10px;
+    }
+    
+    .modal-buttons {
+      margin-top: 20px;
+    }
+    
+    .modal-button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    
+    .modal-button.primary {
+      background: #d83a3a;
+      color: white;
+    }
+    
+    .modal-button.secondary {
+      background: #333;
+      color: white;
+    }
+    
+    .modal-button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="monkey1">
+  <h1 style="color: #d83a3a;">Foodie</h1>
+  <div>
+    <ul class="monkey2">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div id="home" class="monkey3">
+  <div>
+    <h2 style="font-size: 2.5em;">Welcome to Foodie!</h2>
+    <p>Delicious food delivered fast & fresh to your doorstep.</p>
+    <p>Order now and taste the difference!</p>
+    <div class="hero-buttons">
+      <a href="#menu">Order Now</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- Layout Navigation -->
+<div class="layout-nav">
+  <a href="page1.html">Layout 1</a>
+  <a href="page2.html">Layout 2</a>
+  <a href="page3.html" class="active">Layout 3</a>
+  <a href="page4.html">Layout 4</a>
+  <a href="https://demo-portfolio-by-mani.vercel.app/">Go back to main portfolio</a>
+</div>
+
+<!-- About - Layout 3: Image top, text bottom -->
+<div id="about" class="monkey4">
+  <div class="grid-container layout3">
+    <div class="about-image">
+      <img src="https://i.ibb.co/TMx5LpSK/images-6.jpg" alt="About Us Image">
+    </div>
+    <div class="monkey5">
+      <h2>About Us</h2>
+      <p><strong>Originality Advocates</strong> empower thinkers to say <em>NO</em> to copy & paste.</p>
+      <p>We support creativity through resources and community.</p>
+      <a href="https://github.com/monkey9-Cyber-cat-Spidy" target="_blank">Visit GitHub</a>
+    </div>
+  </div>
+</div>
+<p style="text-align:center;"><em>Don't copy your code from AI, PROS create their own mess.</em></p>
+
+<!-- Menu -->
+<div id="menu">
+  <h2 class="menu-heading">Our Menu</h2>
+  <div class="menu-container">
+    <div class="menu-card">
+      <img src="https://i.ibb.co/84bWfRDK/Veggie-Delight.jpg" alt="Veggie Delight">
+      <div class="menu-card-content">
+        <h3 class="menu-card-title">Veggie Delight</h3>
+        <p class="menu-card-description">Fresh seasonal vegetables with herbs and olive oil.</p>
+        <p class="menu-card-price">₹249</p>
+        <button class="order-button" data-item="Veggie Delight">Order Now</button>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img src="https://i.ibb.co/8g1cmCZs/Spicy-Paneer-Wrap.jpg" alt="Spicy Paneer Wrap">
+      <div class="menu-card-content">
+        <h3 class="menu-card-title">Spicy Paneer Wrap</h3>
+        <p class="menu-card-description">Paneer tikka wrapped in warm flatbread.</p>
+        <p class="menu-card-price">₹299</p>
+        <button class="order-button" data-item="Spicy Paneer Wrap">Order Now</button>
+      </div>
+    </div>
+    <div class="menu-card">
+      <img src="https://i.ibb.co/YFfT58cJ/Classic-Biryani.jpg" alt="Classic Biryani">
+      <div class="menu-card-content">
+        <h3 class="menu-card-title">Classic Biryani</h3>
+        <p class="menu-card-description">Aromatic rice cooked with flavorful spices.</p>
+        <p class="menu-card-price">₹349</p>
+        <button class="order-button" data-item="Classic Biryani">Order Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div id="testimonials">
+  <h2 style="text-align: center; color: #d83a3a;">What Our Customers Say</h2>
+  <div class="monkey8">"Absolutely delicious! The best food delivery experience I've had." – Ravi</div>
+  <div class="monkey8">"Every bite was worth it. Fast delivery and great taste!" – Anjali</div>
+</div>
+
+<!-- Contact -->
+<div id="contact" style="display: flex; justify-content: center; padding: 40px 20px;">
+  <div class="menu-card" style="max-width: 500px;">
+    <h2>Contact Us</h2>
+    <p>If you'd like to get in touch, we're just a message away!</p>
+    <p>Email: <a href="mailto:monkeyworld109@gmail.com">monkeyworld109@gmail.com</a></p>
+    <p>Phone: why I should give my number here</p>
+    <p>Address: Don't eat food at monkey's foodie cause you won't survive after eating it.</p>
+  </div>
+</div>
+
+<!-- Layout Navigation (Bottom) -->
+<div class="layout-nav">
+  <a href="page1.html">Layout 1</a>
+  <a href="page2.html">Layout 2</a>
+  <a href="page3.html" class="active">Layout 3</a>
+  <a href="page4.html">Layout 4</a>
+  <a href="https://demo-portfolio-by-mani.vercel.app/">Go back to main portfolio</a>
+</div>
+
+<!-- Order Confirmation Modal -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3 class="modal-title">Confirm Your Order</h3>
+    <p>Are you sure you want to order <span id="orderItemName"></span>?</p>
+    <div class="modal-buttons">
+      <button class="modal-button primary" id="confirmOrder">Yes, I'm Hungry!</button>
+      <button class="modal-button secondary" id="cancelOrder">No, Maybe Later</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="monkey10">
+  <p>
+    All rights reserved to Monkey and Production Department. Production dept. means his cat 
+    <a href="https://i.ibb.co/bjvVYVmD/Snapchat-1989216097.jpg" target="_blank" style="color: #d83a3a; text-decoration: none;">
+      Aloo <i class="fas fa-cat"></i>
+    </a><br>
+    <small>Click on Aloo to see my cat who helped me code by staying quiet.</small>
+  </p>
+  <div>
+    <a href="https://github.com/monkey9-Cyber-cat-Spidy" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+    <a href="https://in.linkedin.com/in/kvsmanikanta" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+  </div>
+</footer>
+
+<script>
+  // Get modal elements
+  const modal = document.getElementById('orderModal');
+  const orderItemName = document.getElementById('orderItemName');
+  const closeModal = document.querySelector('.close-modal');
+  const confirmOrderBtn = document.getElementById('confirmOrder');
+  const cancelOrderBtn = document.getElementById('cancelOrder');
+  
+  // Get all order buttons
+  const orderButtons = document.querySelectorAll('.order-button');
+  
+  // Add click event to all order buttons
+  orderButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const itemName = this.getAttribute('data-item');
+      orderItemName.textContent = itemName;
+      modal.style.display = 'block';
+    });
+  });
+  
+  // Close modal when clicking the X
+  closeModal.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+  
+  // Close modal when clicking outside of it
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+  
+  // Handle confirm order button
+  confirmOrderBtn.addEventListener('click', function() {
+    window.location.href = 'no-food.html';
+  });
+  
+  // Handle cancel order button
+  cancelOrderBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
