@@ -123,11 +123,10 @@ th {
   <tbody id="studentTableBody"></tbody>
 </table>
 <div id="paginationControls" class="pagination"></div>
-
-  </div> 
 <div style="text-align: center; margin-bottom: 40px;">
-  <a href="https://demo-portfolio-by-mani.vercel.app/" style="display: inline-block; background: #333; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Go Back To Main Portfolio</a>
-</div> 
+  <a href="https://demo-portfolio-by-mani.vercel.app/" style="display: inline-block; background: #fff; color: green; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Go Back To Main Portfolio</a>
+</div>
+  </div>  
 <script>
     let students = [];
     let currentPage = 1;
@@ -187,6 +186,9 @@ th {
       if (!newName || !newName.trim()) return alert("Name cannot be empty.");
       const newTask = prompt("Edit task:", student.task);
       if (!newTask || !newTask.trim()) return alert("Task cannot be empty.");
+      const newStatus = prompt("Edit status (Not Started, In Progress, Completed):", student.status);
+      if (!["Not Started", "In Progress", "Completed"].includes(newStatus)) {
+        alert("Invalid status.");
         return;
       }
 
