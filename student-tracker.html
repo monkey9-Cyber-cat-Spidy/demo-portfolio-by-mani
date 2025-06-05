@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -186,9 +187,6 @@ th {
       if (!newName || !newName.trim()) return alert("Name cannot be empty.");
       const newTask = prompt("Edit task:", student.task);
       if (!newTask || !newTask.trim()) return alert("Task cannot be empty.");
-      const newStatus = prompt("Edit status (Not Started, In Progress, Completed):", student.status);
-      if (!["Not Started", "In Progress", "Completed"].includes(newStatus)) {
-        alert("Invalid status.");
         return;
       }
 
